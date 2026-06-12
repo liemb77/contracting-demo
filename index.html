@@ -8,7 +8,7 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://fortierrenovation.ca/">
   <meta property="og:title" content="Fortier Rénovation | Entrepreneur Général Montréal">
-  <meta property="og:description" content="15 ans d'expérience en rénovation résidentielle à Montréal, Laval et Rive-Nord. Soumission gratuite.">
+  <meta property="og:description" content="15 ans d'expérience en rénovation résidentielle à Montréal, Laval et Rive-Nord.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://fortierrenovation.ca/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,11 +32,7 @@
       "addressCountry": "CA"
     },
     "areaServed": ["Montréal", "Laval", "Longueuil", "Rive-Nord"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "214"
-    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "214" },
     "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-14:00"
   }
   </script>
@@ -61,19 +57,10 @@
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-b);
-      background: var(--white);
-      color: var(--black);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
+    body { font-family: var(--font-b); background: var(--white); color: var(--black); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     img { max-width: 100%; display: block; }
     a { text-decoration: none; color: inherit; }
 
-    /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--black); }
     ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
@@ -91,559 +78,199 @@
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-    .nav-logo {
-      font-family: var(--font-h);
-      font-size: 1.6rem;
-      letter-spacing: 0.06em;
-      color: var(--white);
-      display: flex; align-items: center; gap: 10px;
-    }
+    .nav-logo { font-family: var(--font-h); font-size: 1.6rem; letter-spacing: 0.06em; color: var(--white); display: flex; align-items: center; gap: 10px; }
     .nav-logo span { color: var(--orange); }
-    .logo-mark {
-      width: 36px; height: 36px;
-      background: var(--orange);
-      clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
+    .logo-mark { width: 36px; height: 36px; background: var(--orange); clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .nav-right { display: flex; align-items: center; gap: 28px; }
     .nav-links { display: flex; align-items: center; gap: 36px; }
-    .nav-links a {
-      color: rgba(255,255,255,0.75);
-      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-      transition: color 0.2s;
-    }
+    .nav-links a { color: rgba(255,255,255,0.75); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; transition: color 0.2s; }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--orange); color: var(--white);
-      padding: 11px 24px; border-radius: 3px;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      transition: background 0.2s, transform 0.15s;
-      cursor: pointer;
-    }
+    .nav-cta { background: var(--orange); color: var(--white); padding: 11px 24px; border-radius: 3px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s, transform 0.15s; cursor: pointer; }
     .nav-cta:hover { background: var(--orange-d); transform: translateY(-1px); }
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px; cursor: pointer;
-      background: none; border: none; padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--white); border-radius: 1px;
-      transition: all 0.3s;
-    }
+
+    /* ── LANG TOGGLE ── */
+    .lang-toggle { display: flex; align-items: center; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: 3px; overflow: hidden; flex-shrink: 0; }
+    .lang-btn { background: none; border: none; cursor: pointer; padding: 8px 13px; font-family: var(--font-b); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); transition: background 0.2s, color 0.2s; }
+    .lang-btn.active { background: var(--orange); color: var(--white); }
+    .lang-btn:hover:not(.active) { color: var(--white); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 1px; transition: all 0.3s; }
 
     /* ── HERO ── */
-    .hero {
-      position: relative; height: 100vh; min-height: 700px;
-      display: flex; align-items: center;
-      overflow: hidden;
-    }
+    .hero { position: relative; height: 100vh; min-height: 700px; display: flex; align-items: center; overflow: hidden; }
     .hero-bg {
       position: absolute; inset: 0;
-      background:
-        linear-gradient(135deg, rgba(10,11,13,0.92) 0%, rgba(10,11,13,0.6) 60%, rgba(232,98,26,0.15) 100%),
-        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&fm=webp') center/cover no-repeat;
-      transform: scale(1.05);
-      transition: transform 8s ease;
+      background: linear-gradient(135deg, rgba(10,11,13,0.92) 0%, rgba(10,11,13,0.6) 60%, rgba(232,98,26,0.15) 100%), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=80&fm=webp') center/cover no-repeat;
+      transform: scale(1.05); transition: transform 8s ease;
     }
     .hero-bg.loaded { transform: scale(1); }
-    .hero-noise {
-      position: absolute; inset: 0; opacity: 0.04;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px;
-    }
-    .hero-content {
-      position: relative; z-index: 2;
-      max-width: 1200px; margin: 0 auto; padding: 0 48px;
-      padding-top: 80px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(232,98,26,0.15); border: 1px solid rgba(232,98,26,0.4);
-      color: var(--orange); padding: 8px 16px; border-radius: 2px;
-      font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-      margin-bottom: 28px;
-      opacity: 0; animation: fadeUp 0.6s 0.2s var(--ease) forwards;
-    }
-    .badge-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--orange);
-      animation: pulse 2s infinite;
-    }
+    .hero-noise { position: absolute; inset: 0; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 200px; }
+    .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 48px; padding-top: 80px; }
+    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(232,98,26,0.15); border: 1px solid rgba(232,98,26,0.4); color: var(--orange); padding: 8px 16px; border-radius: 2px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 28px; opacity: 0; animation: fadeUp 0.6s 0.2s var(--ease) forwards; }
+    .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); animation: pulse 2s infinite; }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
-
-    .hero h1 {
-      font-family: var(--font-h);
-      font-size: clamp(4rem, 9vw, 9rem);
-      line-height: 0.9; letter-spacing: 0.01em;
-      color: var(--white);
-      opacity: 0; animation: fadeUp 0.7s 0.35s var(--ease) forwards;
-    }
+    .hero h1 { font-family: var(--font-h); font-size: clamp(4rem, 9vw, 9rem); line-height: 0.9; letter-spacing: 0.01em; color: var(--white); opacity: 0; animation: fadeUp 0.7s 0.35s var(--ease) forwards; }
     .hero h1 em { color: var(--orange); font-style: normal; }
-    .hero-sub {
-      margin-top: 28px; max-width: 560px;
-      font-size: 1.1rem; line-height: 1.7;
-      color: rgba(255,255,255,0.7);
-      font-weight: 400;
-      opacity: 0; animation: fadeUp 0.7s 0.5s var(--ease) forwards;
-    }
-    .hero-actions {
-      margin-top: 44px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
-      opacity: 0; animation: fadeUp 0.7s 0.65s var(--ease) forwards;
-    }
-    .btn-primary {
-      background: var(--orange); color: var(--white);
-      padding: 18px 40px; border-radius: 3px;
-      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 10px;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      cursor: pointer; border: none;
-    }
+    .hero-sub { margin-top: 28px; max-width: 560px; font-size: 1.1rem; line-height: 1.7; color: rgba(255,255,255,0.7); font-weight: 400; opacity: 0; animation: fadeUp 0.7s 0.5s var(--ease) forwards; }
+    .hero-actions { margin-top: 44px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; opacity: 0; animation: fadeUp 0.7s 0.65s var(--ease) forwards; }
+    .btn-primary { background: var(--orange); color: var(--white); padding: 18px 40px; border-radius: 3px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: background 0.2s, transform 0.15s, box-shadow 0.2s; cursor: pointer; border: none; }
     .btn-primary:hover { background: var(--orange-d); transform: translateY(-2px); box-shadow: 0 12px 32px rgba(232,98,26,0.35); }
-    .btn-outline {
-      background: transparent; color: var(--white);
-      border: 1px solid rgba(255,255,255,0.35);
-      padding: 18px 40px; border-radius: 3px;
-      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
-      display: inline-flex; align-items: center; gap: 10px;
-      transition: border-color 0.2s, background 0.2s;
-      cursor: pointer;
-    }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,0.35); padding: 18px 40px; border-radius: 3px; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 10px; transition: border-color 0.2s, background 0.2s; cursor: pointer; }
     .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
-    .hero-scroll {
-      position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
-      display: flex; flex-direction: column; align-items: center; gap: 8px;
-      color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      opacity: 0; animation: fadeIn 1s 1.2s forwards;
-    }
-    .scroll-line {
-      width: 1px; height: 48px; background: rgba(255,255,255,0.2);
-      position: relative; overflow: hidden;
-    }
-    .scroll-line::after {
-      content: '';position: absolute; top: -100%; left: 0; right: 0; bottom: 0;
-      background: var(--orange);
-      animation: scrollLine 1.8s 1.5s infinite;
-    }
+    .hero-scroll { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; color: rgba(255,255,255,0.4); font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0; animation: fadeIn 1s 1.2s forwards; }
+    .scroll-line { width: 1px; height: 48px; background: rgba(255,255,255,0.2); position: relative; overflow: hidden; }
+    .scroll-line::after { content: ''; position: absolute; top: -100%; left: 0; right: 0; bottom: 0; background: var(--orange); animation: scrollLine 1.8s 1.5s infinite; }
     @keyframes scrollLine { to { top: 100%; } }
 
     /* ── TRUST BAR ── */
-    .trust {
-      background: var(--black);
-      padding: 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .trust-inner {
-      max-width: 1200px; margin: 0 auto; padding: 0 48px;
-      display: grid; grid-template-columns: repeat(4, 1fr);
-    }
-    .trust-item {
-      padding: 44px 20px;
-      display: flex; flex-direction: column; align-items: center; text-align: center;
-      border-right: 1px solid var(--border);
-      position: relative;
-    }
+    .trust { background: var(--black); padding: 0; border-bottom: 1px solid var(--border); }
+    .trust-inner { max-width: 1200px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .trust-item { padding: 44px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; border-right: 1px solid var(--border); }
     .trust-item:last-child { border-right: none; }
-    .trust-num {
-      font-family: var(--font-h);
-      font-size: 3.6rem; letter-spacing: 0.02em;
-      color: var(--white); line-height: 1;
-    }
+    .trust-num { font-family: var(--font-h); font-size: 3.6rem; letter-spacing: 0.02em; color: var(--white); line-height: 1; }
     .trust-num .accent { color: var(--orange); }
-    .trust-label {
-      margin-top: 8px;
-      font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--muted);
-    }
-    .trust-rbq {
-      display: flex; align-items: center; gap: 8px;
-      color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
-      margin-top: 6px;
-    }
+    .trust-label { margin-top: 8px; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .trust-rbq { display: flex; align-items: center; gap: 8px; color: var(--gold); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; margin-top: 6px; }
 
     /* ── SECTION SHARED ── */
     .section { padding: 120px 48px; }
     .section-inner { max-width: 1200px; margin: 0 auto; }
-    .section-tag {
-      display: inline-block;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--orange); margin-bottom: 16px;
-    }
-    .section-title {
-      font-family: var(--font-h);
-      font-size: clamp(2.8rem, 5vw, 5rem);
-      line-height: 0.95; letter-spacing: 0.01em;
-      color: var(--black);
-    }
+    .section-tag { display: inline-block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px; }
+    .section-title { font-family: var(--font-h); font-size: clamp(2.8rem, 5vw, 5rem); line-height: 0.95; letter-spacing: 0.01em; color: var(--black); }
     .section-title.light { color: var(--white); }
-    .section-sub {
-      margin-top: 20px; max-width: 560px;
-      font-size: 1rem; line-height: 1.75; color: var(--muted);
-    }
+    .section-sub { margin-top: 20px; max-width: 560px; font-size: 1rem; line-height: 1.75; color: var(--muted); }
     .section-sub.light { color: rgba(255,255,255,0.6); }
     .divider { width: 48px; height: 3px; background: var(--orange); margin: 24px 0 0; }
 
     /* ── SERVICES ── */
     .services { background: var(--off); }
-    .services-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 64px; gap: 32px; flex-wrap: wrap;
-    }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
-    }
-    .service-card {
-      background: var(--white);
-      padding: 48px 40px;
-      position: relative; overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.25s var(--ease);
-    }
-    .service-card::before {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
-      background: var(--orange); transform: scaleX(0); transform-origin: left;
-      transition: transform 0.3s var(--ease);
-    }
+    .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; gap: 32px; flex-wrap: wrap; }
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .service-card { background: var(--white); padding: 48px 40px; position: relative; overflow: hidden; cursor: pointer; transition: transform 0.25s var(--ease); }
+    .service-card::before { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--orange); transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease); }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card:hover { transform: translateY(-4px); }
-    .service-icon {
-      width: 52px; height: 52px; margin-bottom: 28px;
-      color: var(--orange);
-    }
-    .service-num {
-      position: absolute; top: 24px; right: 28px;
-      font-family: var(--font-h); font-size: 4rem;
-      color: rgba(0,0,0,0.04); line-height: 1;
-      user-select: none;
-    }
-    .service-title {
-      font-family: var(--font-h); font-size: 1.7rem; letter-spacing: 0.02em;
-      color: var(--black); margin-bottom: 14px;
-    }
-    .service-desc {
-      font-size: 0.9rem; line-height: 1.7; color: var(--muted);
-    }
-    .service-link {
-      margin-top: 24px; display: inline-flex; align-items: center; gap: 8px;
-      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--orange); transition: gap 0.2s;
-    }
+    .service-icon { width: 52px; height: 52px; margin-bottom: 28px; color: var(--orange); }
+    .service-num { position: absolute; top: 24px; right: 28px; font-family: var(--font-h); font-size: 4rem; color: rgba(0,0,0,0.04); line-height: 1; user-select: none; }
+    .service-title { font-family: var(--font-h); font-size: 1.7rem; letter-spacing: 0.02em; color: var(--black); margin-bottom: 14px; }
+    .service-desc { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+    .service-link { margin-top: 24px; display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--orange); transition: gap 0.2s; }
     .service-link:hover { gap: 12px; }
 
-    /* ── HOW IT WORKS ── */
+    /* ── HOW ── */
     .how { background: var(--black); }
-    .how-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
-      margin-top: 72px; position: relative;
-    }
-    .how-grid::before {
-      content: ''; position: absolute;
-      top: 28px; left: 12.5%; right: 12.5%; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--orange), transparent);
-    }
-    .how-step {
-      padding: 0 24px; text-align: center;
-    }
-    .step-circle {
-      width: 56px; height: 56px; border-radius: 50%;
-      background: var(--charcoal); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 32px;
-      font-family: var(--font-h); font-size: 1.4rem; color: var(--orange);
-      position: relative; z-index: 1;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .how-step:hover .step-circle {
-      background: var(--orange); border-color: var(--orange); color: var(--white);
-    }
-    .step-title {
-      font-family: var(--font-h); font-size: 1.4rem; letter-spacing: 0.02em;
-      color: var(--white); margin-bottom: 12px;
-    }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 72px; position: relative; }
+    .how-grid::before { content: ''; position: absolute; top: 28px; left: 12.5%; right: 12.5%; height: 1px; background: linear-gradient(90deg, transparent, var(--orange), transparent); }
+    .how-step { padding: 0 24px; text-align: center; }
+    .step-circle { width: 56px; height: 56px; border-radius: 50%; background: var(--charcoal); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; margin: 0 auto 32px; font-family: var(--font-h); font-size: 1.4rem; color: var(--orange); position: relative; z-index: 1; transition: background 0.3s, border-color 0.3s; }
+    .how-step:hover .step-circle { background: var(--orange); border-color: var(--orange); color: var(--white); }
+    .step-title { font-family: var(--font-h); font-size: 1.4rem; letter-spacing: 0.02em; color: var(--white); margin-bottom: 12px; }
     .step-desc { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.45); }
 
     /* ── PORTFOLIO ── */
     .portfolio { background: var(--white); }
-    .portfolio-header {
-      display: flex; justify-content: space-between; align-items: flex-end;
-      margin-bottom: 56px; gap: 32px; flex-wrap: wrap;
-    }
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 12px;
-    }
-    .portfolio-item {
-      position: relative; overflow: hidden; cursor: pointer;
-      aspect-ratio: 4/3;
-      background: var(--charcoal);
-    }
-    .portfolio-item.large {
-      grid-column: span 2;
-      aspect-ratio: 16/9;
-    }
-    .portfolio-img {
-      width: 100%; height: 100%; object-fit: cover;
-      transition: transform 0.5s var(--ease);
-    }
+    .portfolio-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 56px; gap: 32px; flex-wrap: wrap; }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 12px; }
+    .portfolio-item { position: relative; overflow: hidden; cursor: pointer; aspect-ratio: 4/3; background: var(--charcoal); }
+    .portfolio-item.large { grid-column: span 2; aspect-ratio: 16/9; }
+    .portfolio-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease); }
     .portfolio-item:hover .portfolio-img { transform: scale(1.07); }
-    .portfolio-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,11,13,0.85) 0%, transparent 50%);
-      opacity: 0; transition: opacity 0.3s;
-      display: flex; align-items: flex-end; padding: 28px;
-    }
+    .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,11,13,0.85) 0%, transparent 50%); opacity: 0; transition: opacity 0.3s; display: flex; align-items: flex-end; padding: 28px; }
     .portfolio-item:hover .portfolio-overlay { opacity: 1; }
-    .portfolio-label {
-      font-family: var(--font-h); font-size: 1.4rem; letter-spacing: 0.04em;
-      color: var(--white);
-    }
-    .portfolio-tag {
-      display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em;
-      text-transform: uppercase; color: var(--orange); margin-bottom: 4px;
-    }
+    .portfolio-label { font-family: var(--font-h); font-size: 1.4rem; letter-spacing: 0.04em; color: var(--white); }
+    .portfolio-tag { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange); margin-bottom: 4px; }
 
     /* ── ABOUT ── */
-    .about {
-      background: var(--off);
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0;
-    }
-    .about-image {
-      position: relative; min-height: 600px; overflow: hidden;
-    }
-    .about-image img {
-      width: 100%; height: 100%; object-fit: cover;
-    }
-    .about-badge {
-      position: absolute; bottom: 48px; right: -1px;
-      background: var(--orange); padding: 24px 32px;
-      color: var(--white);
-    }
-    .about-badge-num {
-      font-family: var(--font-h); font-size: 3.2rem; line-height: 1; letter-spacing: 0.02em;
-    }
-    .about-badge-text {
-      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      margin-top: 4px; opacity: 0.85;
-    }
-    .about-content {
-      padding: 100px 80px; display: flex; flex-direction: column; justify-content: center;
-    }
-    .about-content .section-tag { margin-bottom: 16px; }
-    .about-content p {
-      font-size: 1rem; line-height: 1.8; color: var(--muted); margin-top: 24px;
-    }
+    .about { background: var(--off); display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 0; }
+    .about-image { position: relative; min-height: 600px; overflow: hidden; }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-badge { position: absolute; bottom: 48px; right: -1px; background: var(--orange); padding: 24px 32px; color: var(--white); }
+    .about-badge-num { font-family: var(--font-h); font-size: 3.2rem; line-height: 1; letter-spacing: 0.02em; }
+    .about-badge-text { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; opacity: 0.85; }
+    .about-content { padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .about-content p { font-size: 1rem; line-height: 1.8; color: var(--muted); margin-top: 24px; }
     .about-list { margin-top: 36px; display: flex; flex-direction: column; gap: 16px; }
-    .about-list-item {
-      display: flex; align-items: flex-start; gap: 14px;
-    }
-    .check-icon {
-      width: 20px; height: 20px; flex-shrink: 0;
-      background: var(--orange); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center; margin-top: 2px;
-    }
+    .about-list-item { display: flex; align-items: flex-start; gap: 14px; }
+    .check-icon { width: 20px; height: 20px; flex-shrink: 0; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
     .about-list-item span { font-size: 0.92rem; line-height: 1.6; color: #374151; }
 
     /* ── TESTIMONIALS ── */
     .testimonials { background: var(--black); }
     .testimonials-header { text-align: center; margin-bottom: 64px; }
     .testimonials-header .section-sub { margin: 20px auto 0; text-align: center; }
-    .testi-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
-    }
-    .testi-card {
-      background: var(--charcoal); border: 1px solid var(--border);
-      padding: 40px 36px; border-radius: 4px;
-      position: relative;
-      transition: border-color 0.3s, transform 0.25s;
-      cursor: default;
-    }
+    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .testi-card { background: var(--charcoal); border: 1px solid var(--border); padding: 40px 36px; border-radius: 4px; transition: border-color 0.3s, transform 0.25s; cursor: default; }
     .testi-card:hover { border-color: rgba(232,98,26,0.3); transform: translateY(-4px); }
-    .quote-mark {
-      font-family: var(--font-h); font-size: 5rem; line-height: 0.7;
-      color: var(--orange); opacity: 0.3; margin-bottom: 20px; display: block;
-      user-select: none;
-    }
-    .testi-text {
-      font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.75);
-      font-style: italic; margin-bottom: 32px;
-    }
+    .quote-mark { font-family: var(--font-h); font-size: 5rem; line-height: 0.7; color: var(--orange); opacity: 0.3; margin-bottom: 20px; display: block; user-select: none; }
+    .testi-text { font-size: 0.95rem; line-height: 1.75; color: rgba(255,255,255,0.75); font-style: italic; margin-bottom: 32px; }
     .testi-author { display: flex; align-items: center; gap: 16px; }
-    .testi-avatar {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--orange); display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-h); font-size: 1.2rem; color: var(--white); flex-shrink: 0;
-    }
+    .testi-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--orange); display: flex; align-items: center; justify-content: center; font-family: var(--font-h); font-size: 1.2rem; color: var(--white); flex-shrink: 0; }
     .testi-name { font-weight: 700; color: var(--white); font-size: 0.9rem; }
     .testi-loc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
     .stars { color: #F59E0B; font-size: 0.85rem; letter-spacing: 2px; margin-top: 4px; }
 
     /* ── FAQ ── */
     .faq { background: var(--white); }
-    .faq-inner {
-      max-width: 800px; margin: 0 auto;
-    }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
     .faq-header { text-align: center; margin-bottom: 56px; }
     .faq-header .section-sub { margin: 20px auto 0; text-align: center; }
-    .faq-item {
-      border-bottom: 1px solid #E5E7EB;
-      overflow: hidden;
-    }
-    .faq-question {
-      width: 100%; text-align: left; background: none; border: none;
-      padding: 24px 0; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between; gap: 20px;
-      font-family: var(--font-b); font-size: 1rem; font-weight: 600; color: var(--black);
-      transition: color 0.2s;
-    }
+    .faq-item { border-bottom: 1px solid #E5E7EB; overflow: hidden; }
+    .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 24px 0; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 20px; font-family: var(--font-b); font-size: 1rem; font-weight: 600; color: var(--black); transition: color 0.2s; }
     .faq-question:hover { color: var(--orange); }
-    .faq-icon {
-      width: 28px; height: 28px; border-radius: 50%;
-      border: 1.5px solid #D1D5DB; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-      transition: background 0.2s, border-color 0.2s, transform 0.3s;
-    }
-    .faq-item.open .faq-icon {
-      background: var(--orange); border-color: var(--orange); transform: rotate(45deg);
-    }
+    .faq-icon { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid #D1D5DB; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.2s, border-color 0.2s, transform 0.3s; }
+    .faq-item.open .faq-icon { background: var(--orange); border-color: var(--orange); transform: rotate(45deg); }
     .faq-icon svg { width: 14px; height: 14px; color: #6B7280; }
     .faq-item.open .faq-icon svg { color: var(--white); }
-    .faq-answer {
-      max-height: 0; overflow: hidden;
-      transition: max-height 0.4s var(--ease), padding 0.3s;
-      font-size: 0.93rem; line-height: 1.75; color: var(--muted);
-    }
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease), padding 0.3s; font-size: 0.93rem; line-height: 1.75; color: var(--muted); }
     .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 24px; }
 
-    /* ── CTA SECTION ── */
-    .cta-section {
-      background: var(--orange);
-      padding: 100px 48px; text-align: center; position: relative; overflow: hidden;
-    }
-    .cta-section::before {
-      content: 'FORTIER'; position: absolute;
-      font-family: var(--font-h); font-size: 22vw; font-weight: 900;
-      color: rgba(0,0,0,0.08); line-height: 1;
-      top: 50%; left: 50%; transform: translate(-50%, -50%);
-      pointer-events: none; white-space: nowrap; user-select: none;
-    }
+    /* ── CTA ── */
+    .cta-section { background: var(--orange); padding: 100px 48px; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: 'FORTIER'; position: absolute; font-family: var(--font-h); font-size: 22vw; font-weight: 900; color: rgba(0,0,0,0.08); line-height: 1; top: 50%; left: 50%; transform: translate(-50%, -50%); pointer-events: none; white-space: nowrap; user-select: none; }
     .cta-section .section-inner { position: relative; }
-    .cta-section h2 {
-      font-family: var(--font-h);
-      font-size: clamp(2.8rem, 6vw, 6rem);
-      color: var(--white); line-height: 0.95; letter-spacing: 0.01em;
-      margin-bottom: 24px;
-    }
-    .cta-section p {
-      font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 48px;
-    }
+    .cta-section h2 { font-family: var(--font-h); font-size: clamp(2.8rem, 6vw, 6rem); color: var(--white); line-height: 0.95; letter-spacing: 0.01em; margin-bottom: 24px; }
+    .cta-section p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 48px; }
     .cta-buttons { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
-    .btn-white {
-      background: var(--white); color: var(--orange);
-      padding: 18px 44px; border-radius: 3px;
-      font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      transition: transform 0.15s, box-shadow 0.2s;
-      cursor: pointer;
-    }
+    .btn-white { background: var(--white); color: var(--orange); padding: 18px 44px; border-radius: 3px; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; transition: transform 0.15s, box-shadow 0.2s; cursor: pointer; }
     .btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.15); }
-    .btn-dark {
-      background: rgba(0,0,0,0.2); color: var(--white); border: 1px solid rgba(255,255,255,0.3);
-      padding: 18px 44px; border-radius: 3px;
-      font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-      transition: background 0.2s;
-      cursor: pointer;
-    }
+    .btn-dark { background: rgba(0,0,0,0.2); color: var(--white); border: 1px solid rgba(255,255,255,0.3); padding: 18px 44px; border-radius: 3px; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; transition: background 0.2s; cursor: pointer; }
     .btn-dark:hover { background: rgba(0,0,0,0.3); }
 
     /* ── FOOTER ── */
-    footer {
-      background: var(--black); padding: 80px 48px 40px;
-      border-top: 1px solid var(--border);
-    }
-    .footer-top {
-      max-width: 1200px; margin: 0 auto;
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px;
-      padding-bottom: 60px; border-bottom: 1px solid var(--border);
-    }
-    .footer-brand { }
-    .footer-logo {
-      font-family: var(--font-h); font-size: 1.8rem; letter-spacing: 0.06em;
-      color: var(--white); margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
-    }
+    footer { background: var(--black); padding: 80px 48px 40px; border-top: 1px solid var(--border); }
+    .footer-top { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; padding-bottom: 60px; border-bottom: 1px solid var(--border); }
+    .footer-logo { font-family: var(--font-h); font-size: 1.8rem; letter-spacing: 0.06em; color: var(--white); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
     .footer-logo span { color: var(--orange); }
     .footer-desc { font-size: 0.88rem; line-height: 1.7; color: rgba(255,255,255,0.45); max-width: 280px; }
-    .footer-rbq {
-      margin-top: 20px; display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.25);
-      padding: 8px 14px; border-radius: 2px;
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
-      color: var(--gold);
-    }
-    .footer-col h4 {
-      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
-      color: rgba(255,255,255,0.5); margin-bottom: 20px;
-    }
+    .footer-rbq { margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; background: rgba(200,169,110,0.12); border: 1px solid rgba(200,169,110,0.25); padding: 8px 14px; border-radius: 2px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .footer-col h4 { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 20px; }
     .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .footer-col ul li a {
-      font-size: 0.88rem; color: rgba(255,255,255,0.55);
-      transition: color 0.2s;
-    }
+    .footer-col ul li a { font-size: 0.88rem; color: rgba(255,255,255,0.55); transition: color 0.2s; }
     .footer-col ul li a:hover { color: var(--white); }
-    .footer-bottom {
-      max-width: 1200px; margin: 0 auto;
-      padding-top: 32px;
-      display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap;
-    }
+    .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 32px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
     .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
     .footer-socials { display: flex; gap: 16px; }
-    .social-link {
-      width: 36px; height: 36px; border-radius: 50%;
-      border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,0.4);
-      transition: border-color 0.2s, color 0.2s;
-    }
+    .social-link { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: border-color 0.2s, color 0.2s; }
     .social-link:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* ── MOBILE NAV ── */
-    .mobile-menu {
-      position: fixed; inset: 0; z-index: 99;
-      background: var(--black);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      gap: 36px;
-      transform: translateX(100%);
-      transition: transform 0.4s var(--ease);
-    }
+    /* ── MOBILE MENU ── */
+    .mobile-menu { position: fixed; inset: 0; z-index: 99; background: var(--black); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 36px; transform: translateX(100%); transition: transform 0.4s var(--ease); }
     .mobile-menu.open { transform: translateX(0); }
-    .mobile-menu a {
-      font-family: var(--font-h); font-size: 2.8rem; letter-spacing: 0.05em;
-      color: var(--white); text-decoration: none;
-      transition: color 0.2s;
-    }
+    .mobile-menu a { font-family: var(--font-h); font-size: 2.8rem; letter-spacing: 0.05em; color: var(--white); text-decoration: none; transition: color 0.2s; }
     .mobile-menu a:hover { color: var(--orange); }
 
     /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; } to { opacity: 1; }
-    }
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
     .reveal-delay-5 { transition-delay: 0.5s; }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation: none !important; transition: none !important; }
-    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
@@ -690,9 +317,9 @@
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#portfolio" onclick="closeMobile()">Réalisations</a>
-  <a href="#about" onclick="closeMobile()">À propos</a>
+  <a href="#services" onclick="closeMobile()" data-i18n="nav.services">Services</a>
+  <a href="#portfolio" onclick="closeMobile()" data-i18n="nav.portfolio">Réalisations</a>
+  <a href="#about" onclick="closeMobile()" data-i18n="nav.about">À propos</a>
   <a href="#contact" onclick="closeMobile()">Contact</a>
 </div>
 
@@ -702,17 +329,23 @@
     <div class="logo-mark"></div>
     FORTIER <span>RÉN.</span>
   </div>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#portfolio">Réalisations</a>
-    <a href="#how">Processus</a>
-    <a href="#about">À propos</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact" class="nav-cta">Soumission gratuite</a>
+  <div class="nav-right">
+    <div class="nav-links">
+      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#portfolio" data-i18n="nav.portfolio">Réalisations</a>
+      <a href="#how" data-i18n="nav.process">Processus</a>
+      <a href="#about" data-i18n="nav.about">À propos</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="nav-cta" data-i18n="nav.cta">Soumission gratuite</a>
+    </div>
+    <div class="lang-toggle">
+      <button class="lang-btn active" id="btn-fr" onclick="setLang('fr')" aria-label="Français">FR</button>
+      <button class="lang-btn" id="btn-en" onclick="setLang('en')" aria-label="English">EN</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMobile()">
-    <span></span><span></span><span></span>
-  </button>
 </nav>
 
 <!-- HERO -->
@@ -722,16 +355,14 @@
   <div class="hero-content">
     <div class="hero-badge">
       <div class="badge-dot"></div>
-      Entrepreneur général — Québec licencié RBQ
+      <span data-i18n="hero.badge">Entrepreneur général — Québec licencié RBQ</span>
     </div>
-    <h1>BÂTIR.<br>RÉNOVER.<br><em>LIVRER.</em></h1>
-    <p class="hero-sub">
-      Depuis 15 ans, Fortier Rénovation transforme les maisons de Montréal, Laval et de la Rive-Nord. Expertise, transparence, résultats — sans compromis.
-    </p>
+    <h1 data-i18n="hero.h1">BÂTIR.<br>RÉNOVER.<br><em>LIVRER.</em></h1>
+    <p class="hero-sub" data-i18n="hero.sub">Depuis 15 ans, Fortier Rénovation transforme les maisons de Montréal, Laval et de la Rive-Nord. Expertise, transparence, résultats — sans compromis.</p>
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 0 2-2h2a2 2 0 0 0 2 2"/></svg>
-        Soumission gratuite
+        <span data-i18n="hero.cta1">Soumission gratuite</span>
       </a>
       <a href="tel:+15145550123" class="btn-outline">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.91a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -741,7 +372,7 @@
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    Défiler
+    <span data-i18n="hero.scroll">Défiler</span>
   </div>
 </section>
 
@@ -750,21 +381,21 @@
   <div class="trust-inner">
     <div class="trust-item">
       <div class="trust-num"><span class="counter accent" data-target="15">0</span><span class="accent">+</span></div>
-      <div class="trust-label">Années d'expérience</div>
+      <div class="trust-label" data-i18n="trust.years">Années d'expérience</div>
     </div>
     <div class="trust-item">
       <div class="trust-num"><span class="counter" data-target="500">0</span><span class="accent">+</span></div>
-      <div class="trust-label">Projets complétés</div>
+      <div class="trust-label" data-i18n="trust.projects">Projets complétés</div>
     </div>
     <div class="trust-item">
       <div class="trust-num"><span class="counter accent" data-target="4" data-decimal="1">0</span><span class="accent">.9★</span></div>
-      <div class="trust-label">Note Google moyenne</div>
+      <div class="trust-label" data-i18n="trust.rating">Note Google moyenne</div>
     </div>
     <div class="trust-item">
       <div class="trust-num" style="font-size:1.8rem; color: var(--gold)">RBQ</div>
       <div class="trust-rbq">
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        Licencié &amp; Assuré
+        <span data-i18n="trust.rbq">Licencié &amp; Assuré</span>
       </div>
     </div>
   </div>
@@ -775,74 +406,60 @@
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <div class="section-tag reveal">Nos spécialités</div>
-        <h2 class="section-title reveal reveal-delay-1">CE QUE NOUS<br>FAISONS MIEUX</h2>
+        <div class="section-tag reveal" data-i18n="srv.tag">Nos spécialités</div>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="srv.title">CE QUE NOUS<br>FAISONS MIEUX</h2>
         <div class="divider reveal reveal-delay-2"></div>
       </div>
-      <p class="section-sub reveal" style="text-align:right; max-width:360px;">
-        Chaque projet est unique. Nous adaptons notre expertise à votre vision et votre budget.
-      </p>
+      <p class="section-sub reveal" style="text-align:right; max-width:360px;" data-i18n="srv.sub">Chaque projet est unique. Nous adaptons notre expertise à votre vision et votre budget.</p>
     </div>
     <div class="services-grid">
 
       <div class="service-card reveal">
         <div class="service-num">01</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="service-title">Cuisine</div>
-        <p class="service-desc">Rénovation complète ou partielle — armoires, comptoirs, îlot, plomberie et électricité inclus. Conception 3D offerte.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="service-title" data-i18n="srv1.title">Cuisine</div>
+        <p class="service-desc" data-i18n="srv1.desc">Rénovation complète ou partielle — armoires, comptoirs, îlot, plomberie et électricité inclus. Conception 3D offerte.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
       <div class="service-card reveal reveal-delay-1">
         <div class="service-num">02</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 3a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2H7zM4 7a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2H4zM2 11a1 1 0 0 0 0 2h20a1 1 0 0 0 0-2H2z"/><path d="M4 15v6h4v-4h8v4h4v-6"/></svg>
-        </div>
-        <div class="service-title">Salle de bain</div>
-        <p class="service-desc">Douche italienne, bain sur pattes, céramique grand format — chaque détail pensé pour le confort et l'esthétique.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M7 3a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2H7zM4 7a1 1 0 0 0 0 2h16a1 1 0 0 0 0-2H4zM2 11a1 1 0 0 0 0 2h20a1 1 0 0 0 0-2H2z"/><path d="M4 15v6h4v-4h8v4h4v-6"/></svg></div>
+        <div class="service-title" data-i18n="srv2.title">Salle de bain</div>
+        <p class="service-desc" data-i18n="srv2.desc">Douche italienne, bain sur pattes, céramique grand format — chaque détail pensé pour le confort et l'esthétique.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
       <div class="service-card reveal reveal-delay-2">
         <div class="service-num">03</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <div class="service-title">Sous-sol</div>
-        <p class="service-desc">Finition complète, imperméabilisation, dalle, cloisons, éclairage encastré. Transformez votre sous-sol en espace de vie.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="service-title" data-i18n="srv3.title">Sous-sol</div>
+        <p class="service-desc" data-i18n="srv3.desc">Finition complète, imperméabilisation, dalle, cloisons, éclairage encastré. Transformez votre sous-sol en espace de vie.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
       <div class="service-card reveal reveal-delay-3">
         <div class="service-num">04</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 12L12 2l10 10"/><path d="M7 21V12h10v9"/></svg>
-        </div>
-        <div class="service-title">Travaux extérieurs</div>
-        <p class="service-desc">Revêtement, fenêtres, terrasse, toiture partielle. Améliorez le cachet et la valeur de votre propriété.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M2 12L12 2l10 10"/><path d="M7 21V12h10v9"/></svg></div>
+        <div class="service-title" data-i18n="srv4.title">Travaux extérieurs</div>
+        <p class="service-desc" data-i18n="srv4.desc">Revêtement, fenêtres, terrasse, toiture partielle. Améliorez le cachet et la valeur de votre propriété.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
       <div class="service-card reveal reveal-delay-4">
         <div class="service-num">05</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="19" width="20" height="3"/><path d="M4 19V9M20 19V9M12 19V5"/><path d="M4 9l8-6 8 6"/></svg>
-        </div>
-        <div class="service-title">Planchers</div>
-        <p class="service-desc">Bois franc, stratifié, vinyle de luxe, céramique. Installation, sablage et finition — maîtrisés à la perfection.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="19" width="20" height="3"/><path d="M4 19V9M20 19V9M12 19V5"/><path d="M4 9l8-6 8 6"/></svg></div>
+        <div class="service-title" data-i18n="srv5.title">Planchers</div>
+        <p class="service-desc" data-i18n="srv5.desc">Bois franc, stratifié, vinyle de luxe, céramique. Installation, sablage et finition — maîtrisés à la perfection.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
       <div class="service-card reveal reveal-delay-5">
         <div class="service-num">06</div>
-        <div class="service-icon">
-          <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <div class="service-title">Gestion de projet</div>
-        <p class="service-desc">Un chef de projet dédié, un échéancier clair et une communication transparente du début à la remise des clés.</p>
-        <div class="service-link">En savoir plus <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="service-icon"><svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+        <div class="service-title" data-i18n="srv6.title">Gestion de projet</div>
+        <p class="service-desc" data-i18n="srv6.desc">Un chef de projet dédié, un échéancier clair et une communication transparente du début à la remise des clés.</p>
+        <div class="service-link"><span data-i18n="common.learn">En savoir plus</span> <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
       </div>
 
     </div>
@@ -852,31 +469,31 @@
 <!-- HOW IT WORKS -->
 <section class="how section" id="how">
   <div class="section-inner">
-    <div style="text-align:center; margin-bottom:0;">
-      <div class="section-tag reveal" style="color:var(--gold)">Notre processus</div>
-      <h2 class="section-title light reveal reveal-delay-1">4 ÉTAPES VERS<br>VOTRE PROJET IDÉAL</h2>
+    <div style="text-align:center;">
+      <div class="section-tag reveal" style="color:var(--gold)" data-i18n="how.tag">Notre processus</div>
+      <h2 class="section-title light reveal reveal-delay-1" data-i18n="how.title">4 ÉTAPES VERS<br>VOTRE PROJET IDÉAL</h2>
       <div class="divider reveal reveal-delay-2" style="margin: 24px auto 0;"></div>
     </div>
     <div class="how-grid">
       <div class="how-step reveal">
         <div class="step-circle">1</div>
-        <div class="step-title">Consultation</div>
-        <p class="step-desc">Rencontre gratuite à domicile. Nous écoutons votre vision, évaluons l'espace et définissons les priorités.</p>
+        <div class="step-title" data-i18n="step1.title">Consultation</div>
+        <p class="step-desc" data-i18n="step1.desc">Rencontre gratuite à domicile. Nous écoutons votre vision, évaluons l'espace et définissons les priorités.</p>
       </div>
       <div class="how-step reveal reveal-delay-1">
         <div class="step-circle">2</div>
-        <div class="step-title">Soumission détaillée</div>
-        <p class="step-desc">Devis complet, fixe et transparent — aucun frais caché, aucune mauvaise surprise en cours de chantier.</p>
+        <div class="step-title" data-i18n="step2.title">Soumission détaillée</div>
+        <p class="step-desc" data-i18n="step2.desc">Devis complet, fixe et transparent — aucun frais caché, aucune mauvaise surprise en cours de chantier.</p>
       </div>
       <div class="how-step reveal reveal-delay-2">
         <div class="step-circle">3</div>
-        <div class="step-title">Exécution</div>
-        <p class="step-desc">Équipes certifiées, matériaux de qualité, suivi quotidien. Votre maison est traitée comme la nôtre.</p>
+        <div class="step-title" data-i18n="step3.title">Exécution</div>
+        <p class="step-desc" data-i18n="step3.desc">Équipes certifiées, matériaux de qualité, suivi quotidien. Votre maison est traitée comme la nôtre.</p>
       </div>
       <div class="how-step reveal reveal-delay-3">
         <div class="step-circle">4</div>
-        <div class="step-title">Livraison &amp; Garantie</div>
-        <p class="step-desc">Inspection finale, remise des clés et garantie d'un an sur les travaux. Votre satisfaction est notre engagement.</p>
+        <div class="step-title" data-i18n="step4.title">Livraison &amp; Garantie</div>
+        <p class="step-desc" data-i18n="step4.desc">Inspection finale, remise des clés et garantie d'un an sur les travaux. Votre satisfaction est notre engagement.</p>
       </div>
     </div>
   </div>
@@ -887,50 +504,28 @@
   <div class="section-inner">
     <div class="portfolio-header">
       <div>
-        <div class="section-tag reveal">Nos réalisations</div>
-        <h2 class="section-title reveal reveal-delay-1">DES PROJETS QUI<br>PARLENT D'EUX-MÊMES</h2>
+        <div class="section-tag reveal" data-i18n="port.tag">Nos réalisations</div>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="port.title">DES PROJETS QUI<br>PARLENT D'EUX-MÊMES</h2>
         <div class="divider reveal reveal-delay-2"></div>
       </div>
-      <p class="section-sub reveal" style="max-width:320px;">
-        Plus de 500 projets livrés à Montréal, Laval et sur la Rive-Nord.
-      </p>
+      <p class="section-sub reveal" style="max-width:320px;" data-i18n="port.sub">Plus de 500 projets livrés à Montréal, Laval et sur la Rive-Nord.</p>
     </div>
     <div class="portfolio-grid">
       <div class="portfolio-item large reveal">
         <img class="portfolio-img" src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80&fm=webp" alt="Rénovation cuisine moderne Montréal" loading="lazy">
-        <div class="portfolio-overlay">
-          <div>
-            <span class="portfolio-tag">Cuisine</span>
-            <div class="portfolio-label">Rives-du-Nord — 2024</div>
-          </div>
-        </div>
+        <div class="portfolio-overlay"><div><span class="portfolio-tag" data-i18n="port1.tag">Cuisine</span><div class="portfolio-label">Rives-du-Nord — 2024</div></div></div>
       </div>
       <div class="portfolio-item reveal reveal-delay-1">
         <img class="portfolio-img" src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80&fm=webp" alt="Salle de bain luxe Laval" loading="lazy">
-        <div class="portfolio-overlay">
-          <div>
-            <span class="portfolio-tag">Salle de bain</span>
-            <div class="portfolio-label">Laval — 2024</div>
-          </div>
-        </div>
+        <div class="portfolio-overlay"><div><span class="portfolio-tag" data-i18n="port2.tag">Salle de bain</span><div class="portfolio-label">Laval — 2024</div></div></div>
       </div>
       <div class="portfolio-item reveal reveal-delay-2">
         <img class="portfolio-img" src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80&fm=webp" alt="Sous-sol aménagé Montréal" loading="lazy">
-        <div class="portfolio-overlay">
-          <div>
-            <span class="portfolio-tag">Sous-sol</span>
-            <div class="portfolio-label">Montréal — 2023</div>
-          </div>
-        </div>
+        <div class="portfolio-overlay"><div><span class="portfolio-tag" data-i18n="port3.tag">Sous-sol</span><div class="portfolio-label">Montréal — 2023</div></div></div>
       </div>
       <div class="portfolio-item reveal reveal-delay-3">
         <img class="portfolio-img" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80&fm=webp" alt="Plancher bois franc Rive-Nord" loading="lazy">
-        <div class="portfolio-overlay">
-          <div>
-            <span class="portfolio-tag">Planchers</span>
-            <div class="portfolio-label">Rive-Nord — 2023</div>
-          </div>
-        </div>
+        <div class="portfolio-overlay"><div><span class="portfolio-tag" data-i18n="port4.tag">Planchers</span><div class="portfolio-label">Rive-Nord — 2023</div></div></div>
       </div>
     </div>
   </div>
@@ -942,42 +537,30 @@
     <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=900&q=80&fm=webp" alt="Équipe Fortier Rénovation au travail à Montréal" loading="lazy">
     <div class="about-badge">
       <div class="about-badge-num">A+</div>
-      <div class="about-badge-text">Satisfaction client</div>
+      <div class="about-badge-text" data-i18n="about.badge">Satisfaction client</div>
     </div>
   </div>
   <div class="about-content">
-    <div class="section-tag">Notre histoire</div>
-    <h2 class="section-title" style="font-size: clamp(2.4rem,4vw,4.5rem);">BÂTI SUR LA<br>CONFIANCE</h2>
-    <p>
-      Fondée à Montréal en 2009, Fortier Rénovation est une entreprise familiale qui croit qu'une rénovation réussie commence par une relation de confiance. Nous ne sous-traitons jamais à des inconnus — chaque artisan est vétérifié, formé et fier de son travail.
-    </p>
-    <p>
-      Que vous soyez à Montréal, Laval, Longueuil ou sur la Rive-Nord, notre équipe se déplace pour transformer votre espace en quelque chose d'exceptionnel.
-    </p>
+    <div class="section-tag" data-i18n="about.tag">Notre histoire</div>
+    <h2 class="section-title" style="font-size: clamp(2.4rem,4vw,4.5rem);" data-i18n="about.title">BÂTI SUR LA<br>CONFIANCE</h2>
+    <p data-i18n="about.p1">Fondée à Montréal en 2009, Fortier Rénovation est une entreprise familiale qui croit qu'une rénovation réussie commence par une relation de confiance. Nous ne sous-traitons jamais à des inconnus — chaque artisan est vétérifié, formé et fier de son travail.</p>
+    <p data-i18n="about.p2">Que vous soyez à Montréal, Laval, Longueuil ou sur la Rive-Nord, notre équipe se déplace pour transformer votre espace en quelque chose d'exceptionnel.</p>
     <div class="about-list">
       <div class="about-list-item">
-        <div class="check-icon">
-          <svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <span>Licence RBQ en règle — garantie légale de 1 an sur tous les travaux</span>
+        <div class="check-icon"><svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span data-i18n="about.li1">Licence RBQ en règle — garantie légale de 1 an sur tous les travaux</span>
       </div>
       <div class="about-list-item">
-        <div class="check-icon">
-          <svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <span>Assurance responsabilité civile de 2 millions de dollars</span>
+        <div class="check-icon"><svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span data-i18n="about.li2">Assurance responsabilité civile de 2 millions de dollars</span>
       </div>
       <div class="about-list-item">
-        <div class="check-icon">
-          <svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <span>Chef de projet dédié — un seul point de contact du début à la fin</span>
+        <div class="check-icon"><svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span data-i18n="about.li3">Chef de projet dédié — un seul point de contact du début à la fin</span>
       </div>
       <div class="about-list-item">
-        <div class="check-icon">
-          <svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <span>Prix fixe contractuel — votre budget est respecté, sans exception</span>
+        <div class="check-icon"><svg width="10" height="10" fill="none" stroke="white" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span data-i18n="about.li4">Prix fixe contractuel — votre budget est respecté, sans exception</span>
       </div>
     </div>
   </div>
@@ -987,45 +570,33 @@
 <section class="testimonials section" id="testimonials">
   <div class="section-inner">
     <div class="testimonials-header">
-      <div class="section-tag reveal" style="color:var(--gold)">Témoignages</div>
-      <h2 class="section-title light reveal reveal-delay-1">CE QUE DISENT<br>NOS CLIENTS</h2>
-      <p class="section-sub light reveal reveal-delay-2">Plus de 214 avis vérifiés. La parole de nos clients, c'est notre meilleure publicité.</p>
+      <div class="section-tag reveal" style="color:var(--gold)" data-i18n="testi.tag">Témoignages</div>
+      <h2 class="section-title light reveal reveal-delay-1" data-i18n="testi.title">CE QUE DISENT<br>NOS CLIENTS</h2>
+      <p class="section-sub light reveal reveal-delay-2" data-i18n="testi.sub">Plus de 214 avis vérifiés. La parole de nos clients, c'est notre meilleure publicité.</p>
     </div>
     <div class="testi-grid">
       <div class="testi-card reveal">
         <span class="quote-mark">"</span>
-        <p class="testi-text">Fortier a rénové notre cuisine et notre salle de bain en même temps. Résultat impeccable, dans les délais promis et dans le budget. Équipe propre, professionnelle et respectueuse. Je recommande sans hésitation.</p>
+        <p class="testi-text" data-i18n="testi1.text">Fortier a rénové notre cuisine et notre salle de bain en même temps. Résultat impeccable, dans les délais promis et dans le budget. Équipe propre, professionnelle et respectueuse. Je recommande sans hésitation.</p>
         <div class="testi-author">
           <div class="testi-avatar">ML</div>
-          <div>
-            <div class="testi-name">Marie-Luce Trépanier</div>
-            <div class="testi-loc">Montréal-Nord</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div><div class="testi-name">Marie-Luce Trépanier</div><div class="testi-loc">Montréal-Nord</div><div class="stars">★★★★★</div></div>
         </div>
       </div>
       <div class="testi-card reveal reveal-delay-1">
         <span class="quote-mark">"</span>
-        <p class="testi-text">On avait peur après de mauvaises expériences passées. Fortier a changé notre perception. Contrat clair, mises à jour régulières, travail soigné. Notre sous-sol est maintenant notre pièce préférée.</p>
+        <p class="testi-text" data-i18n="testi2.text">On avait peur après de mauvaises expériences passées. Fortier a changé notre perception. Contrat clair, mises à jour régulières, travail soigné. Notre sous-sol est maintenant notre pièce préférée.</p>
         <div class="testi-author">
           <div class="testi-avatar">JC</div>
-          <div>
-            <div class="testi-name">Jean-Charles Boivin</div>
-            <div class="testi-loc">Laval</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div><div class="testi-name">Jean-Charles Boivin</div><div class="testi-loc">Laval</div><div class="stars">★★★★★</div></div>
         </div>
       </div>
       <div class="testi-card reveal reveal-delay-2">
         <span class="quote-mark">"</span>
-        <p class="testi-text">La meilleure décision qu'on ait prise pour notre maison. La salle de bain principale a été transformée en spa de luxe. Le chef de projet était disponible à toute heure. Service 10/10.</p>
+        <p class="testi-text" data-i18n="testi3.text">La meilleure décision qu'on ait prise pour notre maison. La salle de bain principale a été transformée en spa de luxe. Le chef de projet était disponible à toute heure. Service 10/10.</p>
         <div class="testi-author">
           <div class="testi-avatar">SP</div>
-          <div>
-            <div class="testi-name">Sophie Pelletier</div>
-            <div class="testi-loc">Brossard</div>
-            <div class="stars">★★★★★</div>
-          </div>
+          <div><div class="testi-name">Sophie Pelletier</div><div class="testi-loc">Brossard</div><div class="stars">★★★★★</div></div>
         </div>
       </div>
     </div>
@@ -1037,58 +608,58 @@
   <div class="section-inner">
     <div class="faq-inner">
       <div class="faq-header">
-        <div class="section-tag reveal">Questions fréquentes</div>
-        <h2 class="section-title reveal reveal-delay-1">TOUT CE QUE<br>VOUS VOULEZ SAVOIR</h2>
-        <p class="section-sub reveal reveal-delay-2">Posez vos questions — nous répondons toujours honnêtement, même quand ce n'est pas ce que vous voulez entendre.</p>
+        <div class="section-tag reveal" data-i18n="faq.tag">Questions fréquentes</div>
+        <h2 class="section-title reveal reveal-delay-1" data-i18n="faq.title">TOUT CE QUE<br>VOUS VOULEZ SAVOIR</h2>
+        <p class="section-sub reveal reveal-delay-2" data-i18n="faq.sub">Posez vos questions — nous répondons toujours honnêtement, même quand ce n'est pas ce que vous voulez entendre.</p>
       </div>
       <div class="faq-list reveal">
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Combien coûte une rénovation de cuisine à Montréal?
+            <span data-i18n="faq1.q">Combien coûte une rénovation de cuisine à Montréal?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">Une rénovation de cuisine complète à Montréal coûte généralement entre 25 000 $ et 75 000 $, selon la superficie et les matériaux choisis. Une rénovation partielle (armoires et comptoir) peut commencer à 12 000 $. Nous offrons toujours un devis gratuit et détaillé avant de commencer.</div>
+          <div class="faq-answer" data-i18n="faq1.a">Une rénovation de cuisine complète à Montréal coûte généralement entre 25 000 $ et 75 000 $, selon la superficie et les matériaux choisis. Une rénovation partielle (armoires et comptoir) peut commencer à 12 000 $. Nous offrons toujours un devis gratuit et détaillé avant de commencer.</div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Combien de temps dure une rénovation de salle de bain?
+            <span data-i18n="faq2.q">Combien de temps dure une rénovation de salle de bain?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">En moyenne, une salle de bain prend entre 10 et 20 jours ouvrables selon la complexité. Nous planifions chaque étape à l'avance pour minimiser les interruptions et respecter l'échéancier convenu dans le contrat.</div>
+          <div class="faq-answer" data-i18n="faq2.a">En moyenne, une salle de bain prend entre 10 et 20 jours ouvrables selon la complexité. Nous planifions chaque étape à l'avance pour minimiser les interruptions et respecter l'échéancier convenu dans le contrat.</div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Avez-vous votre licence RBQ?
+            <span data-i18n="faq3.q">Avez-vous votre licence RBQ?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">Oui. Fortier Rénovation détient une licence RBQ valide (catégorie entrepreneur général). Cette licence est obligatoire au Québec pour tout travail de rénovation et vous protège légalement. Elle est affichée sur tous nos documents officiels et vérifiable sur le registre public de la RBQ.</div>
+          <div class="faq-answer" data-i18n="faq3.a">Oui. Fortier Rénovation détient une licence RBQ valide (catégorie entrepreneur général). Cette licence est obligatoire au Québec pour tout travail de rénovation et vous protège légalement. Elle est affichée sur tous nos documents officiels et vérifiable sur le registre public de la RBQ.</div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Offrez-vous une garantie sur vos travaux?
+            <span data-i18n="faq4.q">Offrez-vous une garantie sur vos travaux?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">Oui — garantie d'un an sur toute la main-d'oeuvre, en plus des garanties fabricants sur les matériaux. Si quoi que ce soit ne fonctionne pas après la livraison, nous revenons sans frais supplémentaires.</div>
+          <div class="faq-answer" data-i18n="faq4.a">Oui — garantie d'un an sur toute la main-d'oeuvre, en plus des garanties fabricants sur les matériaux. Si quoi que ce soit ne fonctionne pas après la livraison, nous revenons sans frais supplémentaires.</div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Devons-nous quitter notre maison pendant les travaux?
+            <span data-i18n="faq5.q">Devons-nous quitter notre maison pendant les travaux?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">Pas nécessairement. Pour la majorité des projets, vous pouvez rester à la maison. Nous protégeons les zones de vie, travaillons de façon propre et respectons votre routine quotidienne. Dans certains cas de rénovations majeures, nous discuterons des options avec vous dès le départ.</div>
+          <div class="faq-answer" data-i18n="faq5.a">Pas nécessairement. Pour la majorité des projets, vous pouvez rester à la maison. Nous protégeons les zones de vie, travaillons de façon propre et respectons votre routine quotidienne. Dans certains cas de rénovations majeures, nous discuterons des options avec vous dès le départ.</div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" onclick="toggleFaq(this)">
-            Quelle est votre zone de service?
+            <span data-i18n="faq6.q">Quelle est votre zone de service?</span>
             <div class="faq-icon"><svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
           </button>
-          <div class="faq-answer">Nous desservons Montréal et ses environs : Laval, Longueuil, Brossard, Boucherville, Rive-Nord (Blainville, Boisbriand, Terrebonne), et la Rive-Sud. Contactez-nous pour confirmer votre adresse.</div>
+          <div class="faq-answer" data-i18n="faq6.a">Nous desservons Montréal et ses environs : Laval, Longueuil, Brossard, Boucherville, Rive-Nord (Blainville, Boisbriand, Terrebonne), et la Rive-Sud. Contactez-nous pour confirmer votre adresse.</div>
         </div>
 
       </div>
@@ -1099,15 +670,11 @@
 <!-- CTA -->
 <section class="cta-section" id="contact">
   <div class="section-inner">
-    <h2>PRÊT À<br>TRANSFORMER<br>VOTRE MAISON?</h2>
-    <p>Soumission gratuite et sans engagement — réponse en moins de 24h.</p>
+    <h2 data-i18n="cta.title">PRÊT À<br>TRANSFORMER<br>VOTRE MAISON?</h2>
+    <p data-i18n="cta.sub">Soumission gratuite et sans engagement — réponse en moins de 24h.</p>
     <div class="cta-buttons">
-      <a href="tel:+15145550123" class="btn-white">
-        Appeler maintenant — (514) 555-0123
-      </a>
-      <a href="mailto:info@fortierrenovation.ca" class="btn-dark">
-        Envoyer un courriel
-      </a>
+      <a href="tel:+15145550123" class="btn-white" data-i18n="cta.btn1">Appeler maintenant — (514) 555-0123</a>
+      <a href="mailto:info@fortierrenovation.ca" class="btn-dark" data-i18n="cta.btn2">Envoyer un courriel</a>
     </div>
   </div>
 </section>
@@ -1116,37 +683,34 @@
 <footer>
   <div class="footer-top">
     <div class="footer-brand">
-      <div class="footer-logo">
-        <div class="logo-mark"></div>
-        FORTIER <span>RÉN.</span>
-      </div>
-      <p class="footer-desc">Entrepreneur général à Montréal depuis 2009. Rénovation résidentielle haut de gamme à Montréal, Laval, Longueuil et Rive-Nord.</p>
+      <div class="footer-logo"><div class="logo-mark"></div>FORTIER <span>RÉN.</span></div>
+      <p class="footer-desc" data-i18n="footer.desc">Entrepreneur général à Montréal depuis 2009. Rénovation résidentielle haut de gamme à Montréal, Laval, Longueuil et Rive-Nord.</p>
       <div class="footer-rbq">
         <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        RBQ Licencié — Assuré 2M$
+        <span data-i18n="footer.rbq">RBQ Licencié — Assuré 2M$</span>
       </div>
     </div>
     <div class="footer-col">
-      <h4>Services</h4>
+      <h4 data-i18n="footer.col1">Services</h4>
       <ul>
-        <li><a href="#services">Cuisine</a></li>
-        <li><a href="#services">Salle de bain</a></li>
-        <li><a href="#services">Sous-sol</a></li>
-        <li><a href="#services">Travaux extérieurs</a></li>
-        <li><a href="#services">Planchers</a></li>
+        <li><a href="#services" data-i18n="srv1.title">Cuisine</a></li>
+        <li><a href="#services" data-i18n="srv2.title">Salle de bain</a></li>
+        <li><a href="#services" data-i18n="srv3.title">Sous-sol</a></li>
+        <li><a href="#services" data-i18n="srv4.title">Travaux extérieurs</a></li>
+        <li><a href="#services" data-i18n="srv5.title">Planchers</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Entreprise</h4>
+      <h4 data-i18n="footer.col2">Entreprise</h4>
       <ul>
-        <li><a href="#about">À propos</a></li>
-        <li><a href="#portfolio">Réalisations</a></li>
-        <li><a href="#testimonials">Témoignages</a></li>
+        <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#portfolio" data-i18n="nav.portfolio">Réalisations</a></li>
+        <li><a href="#testimonials" data-i18n="testi.tag">Témoignages</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
     <div class="footer-col">
-      <h4>Contact</h4>
+      <h4 data-i18n="footer.col3">Contact</h4>
       <ul>
         <li><a href="tel:+15145550123">(514) 555-0123</a></li>
         <li><a href="mailto:info@fortierrenovation.ca">info@fortierrenovation.ca</a></li>
@@ -1155,22 +719,201 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Fortier Rénovation. Tous droits réservés. | Licence RBQ : 1234-5678</p>
+    <p class="footer-copy" data-i18n="footer.copy">© 2025 Fortier Rénovation. Tous droits réservés. | Licence RBQ : 1234-5678</p>
     <div class="footer-socials">
-      <a class="social-link" href="#" aria-label="Facebook">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-      </a>
-      <a class="social-link" href="#" aria-label="Instagram">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-      </a>
-      <a class="social-link" href="#" aria-label="Houzz">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M 12 2 L 2 8 L 2 22 L 9 22 L 9 15 L 15 15 L 15 22 L 22 22 L 22 8 Z"/></svg>
-      </a>
+      <a class="social-link" href="#" aria-label="Facebook"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+      <a class="social-link" href="#" aria-label="Instagram"><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+      <a class="social-link" href="#" aria-label="Houzz"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M 12 2 L 2 8 L 2 22 L 9 22 L 9 15 L 15 15 L 15 22 L 22 22 L 22 8 Z"/></svg></a>
     </div>
   </div>
 </footer>
 
 <script>
+  // ── TRANSLATIONS
+  const t = {
+    fr: {
+      'nav.services': 'Services',
+      'nav.portfolio': 'Réalisations',
+      'nav.process': 'Processus',
+      'nav.about': 'À propos',
+      'nav.cta': 'Soumission gratuite',
+      'hero.badge': 'Entrepreneur général — Québec licencié RBQ',
+      'hero.h1': 'BÂTIR.<br>RÉNOVER.<br><em>LIVRER.</em>',
+      'hero.sub': 'Depuis 15 ans, Fortier Rénovation transforme les maisons de Montréal, Laval et de la Rive-Nord. Expertise, transparence, résultats — sans compromis.',
+      'hero.cta1': 'Soumission gratuite',
+      'hero.scroll': 'Défiler',
+      'trust.years': "Années d'expérience",
+      'trust.projects': 'Projets complétés',
+      'trust.rating': 'Note Google moyenne',
+      'trust.rbq': 'Licencié &amp; Assuré',
+      'srv.tag': 'Nos spécialités',
+      'srv.title': 'CE QUE NOUS<br>FAISONS MIEUX',
+      'srv.sub': 'Chaque projet est unique. Nous adaptons notre expertise à votre vision et votre budget.',
+      'srv1.title': 'Cuisine',
+      'srv1.desc': "Rénovation complète ou partielle — armoires, comptoirs, îlot, plomberie et électricité inclus. Conception 3D offerte.",
+      'srv2.title': 'Salle de bain',
+      'srv2.desc': "Douche italienne, bain sur pattes, céramique grand format — chaque détail pensé pour le confort et l'esthétique.",
+      'srv3.title': 'Sous-sol',
+      'srv3.desc': "Finition complète, imperméabilisation, dalle, cloisons, éclairage encastré. Transformez votre sous-sol en espace de vie.",
+      'srv4.title': 'Travaux extérieurs',
+      'srv4.desc': "Revêtement, fenêtres, terrasse, toiture partielle. Améliorez le cachet et la valeur de votre propriété.",
+      'srv5.title': 'Planchers',
+      'srv5.desc': "Bois franc, stratifié, vinyle de luxe, céramique. Installation, sablage et finition — maîtrisés à la perfection.",
+      'srv6.title': 'Gestion de projet',
+      'srv6.desc': "Un chef de projet dédié, un échéancier clair et une communication transparente du début à la remise des clés.",
+      'common.learn': 'En savoir plus',
+      'how.tag': 'Notre processus',
+      'how.title': '4 ÉTAPES VERS<br>VOTRE PROJET IDÉAL',
+      'step1.title': 'Consultation',
+      'step1.desc': "Rencontre gratuite à domicile. Nous écoutons votre vision, évaluons l'espace et définissons les priorités.",
+      'step2.title': 'Soumission détaillée',
+      'step2.desc': "Devis complet, fixe et transparent — aucun frais caché, aucune mauvaise surprise en cours de chantier.",
+      'step3.title': 'Exécution',
+      'step3.desc': "Équipes certifiées, matériaux de qualité, suivi quotidien. Votre maison est traitée comme la nôtre.",
+      'step4.title': 'Livraison &amp; Garantie',
+      'step4.desc': "Inspection finale, remise des clés et garantie d'un an sur les travaux. Votre satisfaction est notre engagement.",
+      'port.tag': 'Nos réalisations',
+      'port.title': "DES PROJETS QUI<br>PARLENT D'EUX-MÊMES",
+      'port.sub': 'Plus de 500 projets livrés à Montréal, Laval et sur la Rive-Nord.',
+      'port1.tag': 'Cuisine', 'port2.tag': 'Salle de bain', 'port3.tag': 'Sous-sol', 'port4.tag': 'Planchers',
+      'about.tag': 'Notre histoire',
+      'about.title': 'BÂTI SUR LA<br>CONFIANCE',
+      'about.badge': 'Satisfaction client',
+      'about.p1': "Fondée à Montréal en 2009, Fortier Rénovation est une entreprise familiale qui croit qu'une rénovation réussie commence par une relation de confiance. Nous ne sous-traitons jamais à des inconnus — chaque artisan est vétérifié, formé et fier de son travail.",
+      'about.p2': "Que vous soyez à Montréal, Laval, Longueuil ou sur la Rive-Nord, notre équipe se déplace pour transformer votre espace en quelque chose d'exceptionnel.",
+      'about.li1': "Licence RBQ en règle — garantie légale de 1 an sur tous les travaux",
+      'about.li2': "Assurance responsabilité civile de 2 millions de dollars",
+      'about.li3': "Chef de projet dédié — un seul point de contact du début à la fin",
+      'about.li4': "Prix fixe contractuel — votre budget est respecté, sans exception",
+      'testi.tag': 'Témoignages',
+      'testi.title': 'CE QUE DISENT<br>NOS CLIENTS',
+      'testi.sub': "Plus de 214 avis vérifiés. La parole de nos clients, c'est notre meilleure publicité.",
+      'testi1.text': "Fortier a rénové notre cuisine et notre salle de bain en même temps. Résultat impeccable, dans les délais promis et dans le budget. Équipe propre, professionnelle et respectueuse. Je recommande sans hésitation.",
+      'testi2.text': "On avait peur après de mauvaises expériences passées. Fortier a changé notre perception. Contrat clair, mises à jour régulières, travail soigné. Notre sous-sol est maintenant notre pièce préférée.",
+      'testi3.text': "La meilleure décision qu'on ait prise pour notre maison. La salle de bain principale a été transformée en spa de luxe. Le chef de projet était disponible à toute heure. Service 10/10.",
+      'faq.tag': 'Questions fréquentes',
+      'faq.title': 'TOUT CE QUE<br>VOUS VOULEZ SAVOIR',
+      'faq.sub': "Posez vos questions — nous répondons toujours honnêtement, même quand ce n'est pas ce que vous voulez entendre.",
+      'faq1.q': 'Combien coûte une rénovation de cuisine à Montréal?',
+      'faq1.a': "Une rénovation de cuisine complète à Montréal coûte généralement entre 25 000 $ et 75 000 $, selon la superficie et les matériaux choisis. Une rénovation partielle peut commencer à 12 000 $. Nous offrons toujours un devis gratuit et détaillé avant de commencer.",
+      'faq2.q': 'Combien de temps dure une rénovation de salle de bain?',
+      'faq2.a': "En moyenne, une salle de bain prend entre 10 et 20 jours ouvrables selon la complexité. Nous planifions chaque étape à l'avance pour minimiser les interruptions et respecter l'échéancier convenu dans le contrat.",
+      'faq3.q': 'Avez-vous votre licence RBQ?',
+      'faq3.a': "Oui. Fortier Rénovation détient une licence RBQ valide (catégorie entrepreneur général). Cette licence est obligatoire au Québec pour tout travail de rénovation et vous protège légalement. Vérifiable sur le registre public de la RBQ.",
+      'faq4.q': 'Offrez-vous une garantie sur vos travaux?',
+      'faq4.a': "Oui — garantie d'un an sur toute la main-d'oeuvre, en plus des garanties fabricants sur les matériaux. Si quoi que ce soit ne fonctionne pas après la livraison, nous revenons sans frais supplémentaires.",
+      'faq5.q': 'Devons-nous quitter notre maison pendant les travaux?',
+      'faq5.a': "Pas nécessairement. Pour la majorité des projets, vous pouvez rester à la maison. Nous protégeons les zones de vie, travaillons de façon propre et respectons votre routine quotidienne.",
+      'faq6.q': 'Quelle est votre zone de service?',
+      'faq6.a': "Nous desservons Montréal et ses environs : Laval, Longueuil, Brossard, Boucherville, Rive-Nord (Blainville, Boisbriand, Terrebonne), et la Rive-Sud.",
+      'cta.title': 'PRÊT À<br>TRANSFORMER<br>VOTRE MAISON?',
+      'cta.sub': 'Soumission gratuite et sans engagement — réponse en moins de 24h.',
+      'cta.btn1': 'Appeler maintenant — (514) 555-0123',
+      'cta.btn2': 'Envoyer un courriel',
+      'footer.desc': "Entrepreneur général à Montréal depuis 2009. Rénovation résidentielle haut de gamme à Montréal, Laval, Longueuil et Rive-Nord.",
+      'footer.rbq': 'RBQ Licencié — Assuré 2M$',
+      'footer.col1': 'Services', 'footer.col2': 'Entreprise', 'footer.col3': 'Contact',
+      'footer.copy': '© 2025 Fortier Rénovation. Tous droits réservés. | Licence RBQ : 1234-5678',
+    },
+    en: {
+      'nav.services': 'Services',
+      'nav.portfolio': 'Portfolio',
+      'nav.process': 'Process',
+      'nav.about': 'About',
+      'nav.cta': 'Free Quote',
+      'hero.badge': 'General Contractor — Quebec RBQ Licensed',
+      'hero.h1': 'BUILD.<br>RENOVATE.<br><em>DELIVER.</em>',
+      'hero.sub': 'For 15 years, Fortier Rénovation has been transforming homes in Montreal, Laval and the North Shore. Expertise, transparency, results — without compromise.',
+      'hero.cta1': 'Free Quote',
+      'hero.scroll': 'Scroll',
+      'trust.years': 'Years of experience',
+      'trust.projects': 'Projects completed',
+      'trust.rating': 'Average Google rating',
+      'trust.rbq': 'Licensed &amp; Insured',
+      'srv.tag': 'Our Specialties',
+      'srv.title': 'WHAT WE<br>DO BEST',
+      'srv.sub': 'Every project is unique. We adapt our expertise to your vision and your budget.',
+      'srv1.title': 'Kitchen',
+      'srv1.desc': 'Full or partial renovation — cabinets, countertops, island, plumbing and electrical included. Free 3D design.',
+      'srv2.title': 'Bathroom',
+      'srv2.desc': 'Italian shower, freestanding tub, large-format tile — every detail designed for comfort and aesthetics.',
+      'srv3.title': 'Basement',
+      'srv3.desc': 'Full finishing, waterproofing, slab, framing, recessed lighting. Transform your basement into living space.',
+      'srv4.title': 'Exterior Work',
+      'srv4.desc': 'Siding, windows, deck, partial roofing. Boost curb appeal and property value.',
+      'srv5.title': 'Flooring',
+      'srv5.desc': 'Hardwood, laminate, luxury vinyl, tile. Installation, sanding and finishing — mastered to perfection.',
+      'srv6.title': 'Project Management',
+      'srv6.desc': 'A dedicated project manager, clear timeline and transparent communication from start to key handover.',
+      'common.learn': 'Learn more',
+      'how.tag': 'Our Process',
+      'how.title': '4 STEPS TO YOUR<br>IDEAL PROJECT',
+      'step1.title': 'Consultation',
+      'step1.desc': 'Free in-home meeting. We listen to your vision, assess the space and define priorities.',
+      'step2.title': 'Detailed Quote',
+      'step2.desc': 'Complete, fixed and transparent quote — no hidden fees, no surprises during construction.',
+      'step3.title': 'Execution',
+      'step3.desc': 'Certified teams, quality materials, daily updates. Your home is treated like our own.',
+      'step4.title': 'Delivery &amp; Warranty',
+      'step4.desc': 'Final inspection, key handover and a one-year warranty on all work. Your satisfaction is our commitment.',
+      'port.tag': 'Our Work',
+      'port.title': 'PROJECTS THAT<br>SPEAK FOR THEMSELVES',
+      'port.sub': 'Over 500 projects delivered in Montreal, Laval and the North Shore.',
+      'port1.tag': 'Kitchen', 'port2.tag': 'Bathroom', 'port3.tag': 'Basement', 'port4.tag': 'Flooring',
+      'about.tag': 'Our Story',
+      'about.title': 'BUILT ON<br>TRUST',
+      'about.badge': 'Client Satisfaction',
+      'about.p1': 'Founded in Montreal in 2009, Fortier Rénovation is a family business that believes a successful renovation starts with a relationship of trust. We never subcontract to strangers — every tradesperson is vetted, trained and proud of their work.',
+      'about.p2': 'Whether you are in Montreal, Laval, Longueuil or the North Shore, our team travels to transform your space into something exceptional.',
+      'about.li1': 'Valid RBQ licence — legal 1-year warranty on all work',
+      'about.li2': '$2 million civil liability insurance',
+      'about.li3': 'Dedicated project manager — one point of contact from start to finish',
+      'about.li4': 'Fixed contract price — your budget is respected, no exceptions',
+      'testi.tag': 'Testimonials',
+      'testi.title': 'WHAT OUR<br>CLIENTS SAY',
+      'testi.sub': "Over 214 verified reviews. Our clients' word is our best advertising.",
+      'testi1.text': 'Fortier renovated our kitchen and bathroom at the same time. Impeccable result, on time and on budget. Clean, professional and respectful team. I recommend without hesitation.',
+      'testi2.text': 'We were nervous after bad experiences in the past. Fortier changed our perspective. Clear contract, regular updates, careful work. Our basement is now our favourite room.',
+      'testi3.text': 'The best decision we made for our home. The master bathroom was transformed into a luxury spa. The project manager was available at all hours. 10/10 service.',
+      'faq.tag': 'Frequently Asked Questions',
+      'faq.title': 'EVERYTHING YOU<br>WANT TO KNOW',
+      'faq.sub': "Ask your questions — we always answer honestly, even when it's not what you want to hear.",
+      'faq1.q': 'How much does a kitchen renovation cost in Montreal?',
+      'faq1.a': 'A full kitchen renovation in Montreal typically costs between $25,000 and $75,000, depending on size and materials. A partial renovation can start at $12,000. We always provide a free and detailed quote before starting.',
+      'faq2.q': 'How long does a bathroom renovation take?',
+      'faq2.a': 'On average, a bathroom takes between 10 and 20 working days depending on complexity. We plan every step in advance to minimize disruptions and respect the timeline agreed in the contract.',
+      'faq3.q': 'Do you have your RBQ licence?',
+      'faq3.a': 'Yes. Fortier Rénovation holds a valid RBQ licence (general contractor category). This licence is mandatory in Quebec for any renovation work and protects you legally. Verifiable on the public RBQ registry.',
+      'faq4.q': 'Do you offer a warranty on your work?',
+      'faq4.a': "Yes — a one-year warranty on all labour, plus manufacturer warranties on materials. If anything doesn't work after delivery, we come back at no extra charge.",
+      'faq5.q': 'Do we need to leave our home during construction?',
+      'faq5.a': 'Not necessarily. For most projects, you can stay at home. We protect living areas, work cleanly and respect your daily routine.',
+      'faq6.q': 'What is your service area?',
+      'faq6.a': 'We serve Montreal and surrounding areas: Laval, Longueuil, Brossard, Boucherville, North Shore (Blainville, Boisbriand, Terrebonne), and the South Shore.',
+      'cta.title': 'READY TO<br>TRANSFORM<br>YOUR HOME?',
+      'cta.sub': 'Free quote, no obligation — reply within 24 hours.',
+      'cta.btn1': 'Call now — (514) 555-0123',
+      'cta.btn2': 'Send an email',
+      'footer.desc': 'General contractor in Montreal since 2009. High-end residential renovation in Montreal, Laval, Longueuil and the North Shore.',
+      'footer.rbq': 'RBQ Licensed — Insured $2M',
+      'footer.col1': 'Services', 'footer.col2': 'Company', 'footer.col3': 'Contact',
+      'footer.copy': '© 2025 Fortier Rénovation. All rights reserved. | RBQ Licence: 1234-5678',
+    }
+  };
+
+  let currentLang = 'fr';
+
+  function setLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (t[lang][key] !== undefined) el.innerHTML = t[lang][key];
+    });
+    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+
   // ── NAV SCROLL
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
@@ -1182,26 +925,19 @@
   setTimeout(() => heroBg.classList.add('loaded'), 100);
   window.addEventListener('scroll', () => {
     const y = window.scrollY;
-    if (y < window.innerHeight) {
-      heroBg.style.transform = `scale(1) translateY(${y * 0.3}px)`;
-    }
+    if (y < window.innerHeight) heroBg.style.transform = `scale(1) translateY(${y * 0.3}px)`;
   }, { passive: true });
 
   // ── MOBILE MENU
   const mobileMenu = document.getElementById('mobileMenu');
-  function toggleMobile() {
-    mobileMenu.classList.toggle('open');
-  }
-  function closeMobile() {
-    mobileMenu.classList.remove('open');
-  }
+  function toggleMobile() { mobileMenu.classList.toggle('open'); }
+  function closeMobile() { mobileMenu.classList.remove('open'); }
 
   // ── SCROLL REVEAL
-  const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.12 });
-  revealEls.forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // ── COUNTER ANIMATION
   function animateCounter(el) {
@@ -1210,24 +946,19 @@
     const duration = 1800;
     const start = performance.now();
     const update = (now) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = target * eased;
-      el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+      el.textContent = isDecimal ? (target * eased).toFixed(1) : Math.floor(target * eased);
       if (progress < 1) requestAnimationFrame(update);
     };
     requestAnimationFrame(update);
   }
-  const counters = document.querySelectorAll('.counter');
   const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); } });
   }, { threshold: 0.5 });
-  counters.forEach(c => counterObserver.observe(c));
+  document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
 
-  // ── FAQ ACCORDION
+  // ── FAQ
   function toggleFaq(btn) {
     const item = btn.parentElement;
     const isOpen = item.classList.contains('open');
@@ -1235,14 +966,11 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // ── SMOOTH ANCHOR SCROLL
+  // ── SMOOTH SCROLL
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
       const target = document.querySelector(a.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
 </script>
